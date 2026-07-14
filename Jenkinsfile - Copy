@@ -2,7 +2,7 @@ node {
 
     stage ('clone'){
 
-      git branch: 'main', url: 'https://github.com/AwsDevops1432/spring-petclinic.git'
+      git branch: 'feature/2026.07.14', url: 'https://github.com/AwsDevops1432/spring-petclinic.git'
     }
 
    stage ('build'){
