@@ -19,7 +19,7 @@ stage ('generated reports'){
 }
 stage ('generated artifacts'){
 
-      barchiveArtifacts artifacts: 'target/.jar'
+       barchiveArtifacts artifacts: 'target/.jar'
 }
 stage ('deploy'){
 
