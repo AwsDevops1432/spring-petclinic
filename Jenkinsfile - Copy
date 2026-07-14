@@ -1,0 +1,28 @@
+node {
+
+    stage ('clone'){
+
+      git branch: 'main', url: 'https://github.com/AwsDevops1432/spring-petclinic.git'
+    }
+
+   stage ('build'){
+
+      bat 'mvn clean install'
+}
+stage ('test'){
+
+      bat 'mvn test'
+}
+stage ('generated reports'){
+
+      junit stdioRetention: 'ALL', testResults: 'target/surefire-reports/*.xml'
+}
+stage ('generated artifacts'){
+
+      barchiveArtifacts artifacts: 'target/.jar'
+}
+stage ('deploy'){
+
+      echo 'deploy'
+}
+
